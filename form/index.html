@@ -1,0 +1,1028 @@
+<!doctype html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>資料請求「女子マンガ」キャラクター使用についての基礎知識</title>
+    <base href=""><link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+<script>
+var dynamicLoad = function(path, enable) {
+  if (enable) {
+    var head = document.getElementsByTagName('head')[0];
+    var scriptElm = document.createElement('script');
+    scriptElm.src = path;
+    scriptElm.type = 'text/javascript';
+    head.appendChild(scriptElm);
+  }
+};
+var canUseDateInput = function() {
+  var dummyElm = document.createElement('input');
+  dummyElm.setAttribute('type', 'date');
+  dummyElm.value = 1;
+  return dummyElm.value != 1;
+};
+dynamicLoad('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', typeof jQuery === 'undefined');
+dynamicLoad('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', true);
+
+if (!canUseDateInput()) {
+  dynamicLoad('https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js', true);
+  window.addEventListener('load', function() {
+    var calendarElms = $('input.form-control[type="date"]');
+    calendarElms.attr('type', 'text');
+    calendarElms.each(function(index, calendarElm) {
+      value = (calendarElm.value) ? calendarElm.value.replace(/-/g,'/') : '';
+      calendarElm.value = ''
+      $(calendarElm).datepicker({
+        dateFormat: 'yy/mm/dd',
+        constrainInput: true
+      });
+      $(calendarElm).datepicker('setDate', value);
+    });
+
+  });
+}
+</script>
+
+    <link rel="stylesheet" type="text/css" href="/themes/1UD5KvYu/css/default.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/themes/1UD5KvYu/js/default.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KTCBJ2X');</script>
+
+    <!-- ベースCSS -->
+    <link rel="stylesheet" type="text/css" href="/themes/1UD5KvYu/css/bdash.min.css">
+
+    <!-- カスタムCSS -->
+    <style>
+    /**
+     * form-control
+     *
+     * ```
+     * <input type="text" class="form-control" />
+     * <textarea class="form-control"></textarea>
+     * ```
+     */
+    .form-control {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      color: #000;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #b9bbbe;
+      border-radius: 3px;
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "メイリオ", Meiryo, sans-serif;
+      transition-property: border-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      appearance: none;
+    }
+    .form-control:first-of-type {
+      margin-top: 0;
+    }
+    .form-control:hover, .form-control:focus {
+      border-color: #1568c3 !important;
+    }
+    input.form-control {
+      height: auto;
+      line-height: normal;
+    }
+    textarea.form-control {
+      height: auto;
+      min-height: 100px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    @media (max-width: 667px) {
+      .form-control {
+        padding: 7px;
+      }
+      .form-control:first-of-type {
+      }
+      .form-control:hover, .form-control:focus {
+      }
+      input.form-control {
+      }
+      textarea.form-control {
+      }
+    }
+
+    /**
+     * form-control with custom-select
+     */
+    .form-control.custom-select {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+      padding: 8px;
+      color: #000;
+      background-color: #fff;
+      font-size: 14px;
+      border: 1px solid #b9bbbe;
+      border-radius: 3px;
+    }
+    @media (max-width: 667px) {
+      .form-control.custom-select {
+        padding: 7px;
+      }
+    }
+
+    /**
+     * page-item
+     *
+     * ```
+     * <dl class="page-item">
+     *   <dt class="page-item-label">...<span>※</span></dt>
+     *   <dd class="page-item-info">
+     *     ...
+     *     <div class="page-item-message"></div>
+     *     <div class="page-item-description"></div>
+     *   </dd>
+     * </dl>
+     * ```
+     */
+    .page-item {
+      margin: 10px 0 0;
+      padding: 20px;
+      background-color: #d4edfb;
+    }
+    .page-item:first-of-type {
+      margin-top: 0;
+    }
+    .page-item .page-item-label {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .page-item .page-item-label > span {
+      vertical-align: middle;
+      color: #900;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .page-item .page-item-label:last-of-type {
+      margin-bottom: 0;
+    }
+    .page-item .page-item-info {
+      padding-top: 15px;
+    }
+    .page-item .page-item-info .page-item-description {
+    }
+    .page-item .page-item-info .page-item-description:empty {
+      margin-top: 0;
+    }
+    @media (max-width: 667px) {
+      .page-item {
+        margin-top: 5px;
+        padding: 10px;
+      }
+      .page-item:first-of-type {
+        margin-top: 0;
+      }
+      .page-item .page-item-label {
+        font-size: 13px;
+      }
+      .page-item .page-item-label:last-of-type {
+      }
+      .page-item .page-item-info {
+        padding-top: 10px;
+      }
+      .page-item .page-item-info .page-item-description {
+      }
+      .page-item .page-item-info .page-item-description:empty {
+      }
+    }
+
+    /**
+     * page-item with page-item-layout-v
+     */
+    .page-item.page-item-layout-v {
+    }
+    .page-item.page-item-layout-v .page-item-label {
+      margin-bottom: 0;
+    }
+    .page-item.page-item-layout-v .page-item-label:last-of-type {
+      margin-bottom: 0;
+    }
+    @media (max-width: 667px) {
+      .page-item.page-item-layout-v {
+      }
+      .page-item.page-item-layout-v .page-item-label {
+        margin-bottom: 0;
+      }
+      .page-item.page-item-layout-v .page-item-label:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    /**
+     * page-item with page-item-layout-h
+     */
+    .page-item.page-item-layout-h {
+      justify-content: center;
+      align-items: center;
+    }
+    .page-item.page-item-layout-h .page-item-label {
+      margin-bottom: 0;
+    }
+    .page-item.page-item-layout-h .page-item-label:last-of-type {
+      margin-bottom: 0;
+    }
+    .page-item.page-item-layout-h .page-item-info {
+      padding-top: 0;
+    }
+    @media (max-width: 667px) {
+      .page-item.page-item-layout-h {
+      }
+      .page-item.page-item-layout-h .page-item-label {
+        margin-bottom: 0;
+      }
+      .page-item.page-item-layout-h .page-item-label:last-of-type {
+        margin-bottom: 0;
+      }
+      .page-item.page-item-layout-h .page-item-info {
+        padding-top: 0;
+      }
+    }
+
+    /**
+     * page-item with form-item-agreement
+     */
+    .page-item.form-item-agreement {
+      margin-top: 30px;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+    }
+    .page-item.form-item-agreement .page-item-label {
+      line-height: 1.3;
+      text-align: center;
+    }
+    .page-item.form-item-agreement .page-item-info {
+      padding-top: 25px;
+    }
+    .page-item.form-item-agreement .page-item-info .agreement-text {
+      overflow: auto;
+      max-height: 200px;
+      margin-bottom: 0;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+    }
+    .page-item.form-item-agreement .page-item-info > label {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .page-item.form-item-agreement .page-item-info > label > label {
+    }
+    @media (max-width: 667px) {
+      .page-item.form-item-agreement {
+        margin-top: 25px;
+      }
+      .page-item.form-item-agreement .page-item-label {
+      }
+      .page-item.form-item-agreement .agreement-text {
+      }
+      .page-item.form-item-agreement .page-item-info {
+        padding-top: 20px;
+      }
+      .page-item.form-item-agreement .page-item-info > label {
+        margin-top: 15px;
+        font-size: 12px;
+      }
+      .page-item.form-item-agreement .page-item-info > label > label {
+      }
+    }
+
+    /**
+     * page-item with form-item-name
+     */
+    .page-item.form-item-name {
+    }
+    .page-item.form-item-name .page-item-info {
+      font-size: 0;
+    }
+    .page-item.form-item-name .page-item-info .form-control {
+      width: calc(50% - 6px);
+      margin-top: 0;
+    }
+    .page-item.form-item-name .page-item-info .form-control:first-child {
+      margin-right: 10px;
+    }
+    .page-item.form-item-name .page-item-info .form-control:first-of-type {
+      margin-top: 0;
+    }
+    .page-item.form-item-name .page-item-info .form-control:last-of-type {
+      margin-right: 0;
+    }
+
+    /**
+     * page-item with form-item-radio or form-item-checkbox
+     */
+    .page-item.form-item-radio,
+    .page-item.form-item-checkbox {
+    }
+    .page-item.form-item-radio .page-item-info,
+    .page-item.form-item-checkbox .page-item-info {
+    }
+    .page-item.form-item-radio .page-item-info > label,
+    .page-item.form-item-checkbox .page-item-info > label {
+      margin: 0;
+      padding-top: 10px;
+    }
+    .page-item.form-item-radio .page-item-info > label:first-of-type,
+    .page-item.form-item-checkbox .page-item-info > label:first-of-type {
+      padding-top: 0;
+    }
+    .page-item.form-item-radio .page-item-info > label > input[type="radio"],
+    .page-item.form-item-checkbox .page-item-info > label > input[type="checkbox"] {
+      margin-right: 5px;
+      vertical-align: right;
+    }
+
+    /**
+     * bdash_form_button_input and bdash_form_button_confirm
+     *
+     * ```
+     * <div class="bdash_form_button_confirm">
+     *   <button type="button" class="bdash_form_back_button">戻る</button>
+     *   <input type="submit" value="送信" class="bdash_form_commit_button">
+     * </div>
+     * ```
+     */
+    .bdash_form_button_input,
+    .bdash_form_button_confirm {
+      padding: 20px 0 1px;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 0;
+    }
+    .bdash_form_button_input .bdash_form_back_button,
+    .bdash_form_button_confirm .bdash_form_back_button {
+      display: inline-block;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 10px;
+      padding: 13px;
+      line-height: 1.2;
+      background-color: #dcdddd;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #000;
+      border-radius: 3px;
+      cursor: pointer;
+      transition-property: background-color;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-in-out;
+    }
+    .bdash_form_button_input .bdash_form_back_button:hover,
+    .bdash_form_button_confirm .bdash_form_back_button:hover {
+      background-color: #bbb;
+    }
+    .bdash_form_button_input .bdash_form_commit_button,
+    .bdash_form_button_confirm .bdash_form_commit_button {
+      display: inline-block;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 10px;
+      padding: 13px;
+      line-height: 1.2;
+      background-color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #000;
+      border-radius: 3px;
+      cursor: pointer;
+      transition-property: background-color;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-in-out;
+    }
+    .bdash_form_button_input .bdash_form_commit_button:hover,
+    .bdash_form_button_confirm .bdash_form_commit_button:hover {
+      background-color: #eee;
+    }
+    @media (max-width: 667px) {
+      .bdash_form_button_input,
+      .bdash_form_button_confirm {
+      }
+      .bdash_form_button_confirm .bdash_form_back_button {
+        max-width: calc(50% - 15px * 2);
+      }
+      .bdash_form_button_confirm .bdash_form_commit_button {
+        max-width: calc(50% - 15px * 2);
+      }
+    }
+
+    /**
+     * confirm-from-infomation
+     *
+     * ```
+     * <div class="confirm-from-infomation">
+     * </div>
+     * ```
+     */
+    .confirm-from-infomation {
+      margin-top: 20px;
+      padding: 15px !important;
+      background-color: #fff !important;
+      border: 1px solid #e0e0e0;
+      border-radius: 0 !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+    
+    /**
+     * ナビゲーション（H）- 遷移フロー（A）の調整
+     */
+    .block-navi-h-a__grid__cell:first-child {
+      width: 48%;
+    }
+    .block-navi-h-a__grid__cell:last-child {
+      width: 52%;
+    }
+    </style>
+
+  </head>
+  <body class="bdash-form-input">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTCBJ2X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!--
+      グループ（A）- ヘッダー（B）
+    -->
+    <div class="block-group-a-b  block-group-a-b--sticky-true  mod-box  mod-box--theme-a-b--a  helper--border-a-a--c-bottom">
+      <div class="block-group-a-b__container  mod-box__container  mod-box__container--width-fit-safe-area">
+
+        <!--
+          バー（A）- ヘッダー（B）
+        -->
+        <header class="block-bar-a-b  block-bar-a-b--narrow-height  mod-box  mod-box--theme-a-b--a" role="header">
+          <div class="block-bar-a-b__container  mod-box__container">
+            <div class="block-bar-a-b__grid  mod-grid2">
+              <div class="block-bar-a-b__grid__cell-logo  mod-grid2__cell">
+                <span class="block-bar-a-b__logo  mod-btn  mod-btn--theme-a-a--b">
+                  <span class="mod-btn__label  mod-btn__label--type-a-a--a-a">講談社 C-station (KODANSHA Content Station)</span>
+                </span>
+              </div>
+              <div class="block-bar-a-b__grid__cell-btn-close  mod-grid2__cell">
+                <a class="block-bar-a-b__btn-close  mod-btn  mod-btn--theme-a-b--d  js-main-drawer__toggle" href="javascript:window.close();">
+                  <i class="mod-btn__icon  mod-btn__icon--absolute-center  mod-icon  mod-icon--type-a-c--a-f-a">CLOSE</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+      </div>
+    </div>
+
+    <!--
+      フォーム（A）- シングルカラム（A）
+    -->
+    <main class="layout-form-a-a  mod-box  mod-box--theme-a-b--a" role="main">
+      <div class="layout-form-a-a__container  mod-box__container">
+
+        <!--
+          ヴィジェット（D）- セクション（A）
+        -->
+        <div class="block-widget-d-a  mod-box  helper--padding-bottom60to50">
+          <div class="block-widget-d-a__header  mod-box  mod-box--theme-a-b--g">
+            <div class="block-widget-d-a__header__container  mod-box__container  mod-box__container--width-form-padding-0to20to15">
+              <div class="block-widget-d-a__header__grid  mod-grid2">
+                <div class="block-widget-d-a__header__grid__cell-label  mod-grid2__cell">
+                  <h1 class="block-widget-d-a__label  mod-text  mod-text--weight-bold">資料請求「女子マンガ」キャラクター使用についての基礎知識</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-widget-d-a__container  mod-box__container  mod-box__container--width-form-padding-0to20to15  helper--padding-top30to20">
+
+            <!--
+              ナビゲーション（H）- 遷移フロー（A）
+            -->
+            <div class="block-navi-h-a  mod-box  helper--padding-bottom30to20">
+              <div class="block-navi-h-a__container  mod-box__container">
+                <div class="block-navi-h-a__grid  mod-grid2">
+                  <div class="block-navi-h-a__grid__cell  mod-grid2__cell">
+                    <div class="block-navi-h-a__item  block-navi-h-a__item--flow-input  mod-box">
+                      <div class="block-navi-h-a__item__container  mod-box__container">
+                        <p class="block-navi-h-a__label  mod-text  mod-text--ellipsis-true">入力</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="block-navi-h-a__grid__cell  mod-grid2__cell">
+                    <div class="block-navi-h-a__item  block-navi-h-a__item--flow-complete  mod-box">
+                      <div class="block-navi-h-a__item__container  mod-box__container">
+                        <p class="block-navi-h-a__label  mod-text  mod-text--ellipsis-true">完了</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+	          <form action="/09joshimanga?bdactcd=&amp;bdad=" method="post" class="bdash_form page-item-layout_vertical">
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="authenticity_token" id="authenticity_token" value="vOOIjhNiOOkpojaw+gn8V9S5Ho6UnC7hOmTRkPWMm/r/wozKDuX69Pgk0fn/uHypCWGODocWRSHKW7TAsbYmyA==" />
+  <input type="hidden" name="bdash_form_data[f_1478]" id="bdash_form_data_f_1478" />
+<dl class="page-item page-item-layout-v ">
+  <dt class="page-item-label">
+    会社名
+      <span>※</span>
+  </dt>
+
+  <dd class="page-item-info">
+    <input type="text" name="bdash_form_data[f_1483]" id="bdash_form_data_f_1483" value="" placeholder="" maxlength="" class="form-control" />
+
+    <div class="page-item-message"></div>
+
+    <div class="page-item-description">
+      
+    </div>
+  </dd>
+</dl>
+<dl class="page-item page-item-layout-v ">
+  <dt class="page-item-label">
+    部署名
+      <span>※</span>
+  </dt>
+
+  <dd class="page-item-info">
+    <input type="text" name="bdash_form_data[f_1488]" id="bdash_form_data_f_1488" value="" placeholder="" class="form-control" />
+
+    <div class="page-item-message"></div>
+
+    <div class="page-item-description">
+      
+    </div>
+  </dd>
+</dl>
+<dl class="page-item page-item-layout-v form-item-name ">
+  <dt class="page-item-label">
+    お名前
+      <span>※</span>
+  </dt>
+  <dd class="page-item-info">
+    <input type="text" name="bdash_form_data[f_1481][]" id="bdash_form_data_f_1481_" maxlength="100" placeholder="姓" class="form-control" />
+    <input type="text" name="bdash_form_data[f_1481][]" id="bdash_form_data_f_1481_" maxlength="100" placeholder="名" class="form-control" />
+    <div class="page-item-message"></div>
+    <div class="page-item-description"></div>
+  </dd>
+</dl>
+<input type="hidden" name="bdash_form_data[f_1479]" id="bdash_form_data_f_1479" />
+<dl class="page-item page-item-layout-v ">
+  <dt class="page-item-label">
+    会社TEL
+      <span>※</span>
+  </dt>
+  <dd class="page-item-info">
+    <input type="text" name="bdash_form_data[f_1489]" id="bdash_form_data_f_1489" value="" placeholder="" class="form-control" />
+    <div class="page-item-message"></div>
+    <div class="page-item-description"></div>
+  </dd>
+</dl>
+<dl class="page-item page-item-layout-v ">
+  <dt class="page-item-label">
+    E-mail
+      <span>※</span>
+  </dt>
+  <dd class="page-item-info">
+    <input type="text" name="bdash_form_data[f_1482]" id="bdash_form_data_f_1482" value="" placeholder="" class="form-control" />
+    <div class="page-item-message"></div>
+    <div class="page-item-description"></div>
+  </dd>
+</dl>
+<dl class="page-item page-item-layout-v form-item-radio ">
+  <dt class="page-item-label">
+    御社業種
+      <span>※</span>
+  </dt>
+  <dd class="page-item-info">
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________________" value="ファッション・アパレル・繊維" />ファッション・アパレル・繊維
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_____" value="化粧品" />化粧品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____________" value="日用品・トイレタリー" />日用品・トイレタリー
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484___________" value="家庭用品・生活雑貨" />家庭用品・生活雑貨
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_______" value="運輸・交通" />運輸・交通
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____" value="旅行" />旅行
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_________" value="レジャー・娯楽" />レジャー・娯楽
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________" value="ホテル・宿泊" />ホテル・宿泊
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484___________" value="スポーツ・趣味用品" />スポーツ・趣味用品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484______________" value="ゲーム・映像/音声ソフト" />ゲーム・映像/音声ソフト
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____" value="食品" />食品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________" value="飲料・嗜好品" />飲料・嗜好品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484__________" value="医薬品、医療用品" />医薬品、医療用品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484__IT______" value="IT・情報・通信" />IT・情報・通信
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________" value="流通・小売業" />流通・小売業
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____________" value=" 精密機器・事務用品" /> 精密機器・事務用品
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_______" value="自動車関連" />自動車関連
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_________" value="教育・学習支援" />教育・学習支援
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484______________" value="病院・医療/介護サービス" />病院・医療/介護サービス
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484__________" value="不動産・住宅販売" />不動産・住宅販売
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_________" value="建設・住宅設備" />建設・住宅設備
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_____AV__" value="家電・AV機器" />家電・AV機器
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_______" value="金融・保険" />金融・保険
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_________" value="外食・中食産業" />外食・中食産業
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________" value="美容・エステ" />美容・エステ
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484________" value="各種サービス" />各種サービス
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____________" value="官公庁・自治体・団体" />官公庁・自治体・団体
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484__________" value="放送・新聞・出版" />放送・新聞・出版
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484____" value="広告" />広告
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484______" value="印刷関連" />印刷関連
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_________________" value=" エネルギー・化学・素材・機械" /> エネルギー・化学・素材・機械
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484___________" value="半導体・電機・電子" />半導体・電機・電子
+        </label>
+        <label>
+          <input type="radio" name="bdash_form_data[f_1484][]" id="bdash_form_data_f_1484_____" value="その他" />その他
+        </label>
+
+    <div class="page-item-message"></div>
+
+
+    <div class="page-item-description">
+      
+    </div>
+
+  </dd>
+</dl>
+<dl class="page-item page-item-layout-v form-item-agreement ">
+  <dt class="page-item-label">
+    講談社のプライバシーポリシーをお読みいただき、同意のうえご登録をお願いします。
+  </dt>
+  <dd class="detail-info">
+  <dd class="page-item-info">
+    <div class="agreement-text">
+      <div>講談社が運営するウェブサイト（以下、公式サイト）は皆様の住所、氏名、電話番号、メールアドレスなどの個人情報について、下記講談社プライバシーポリシーに基づき、細心の注意を払って取り扱います。</div><div><div>1）個人情報の利用目的</div><div>講談社は以下に示す利用目的達成のために、皆様から個人情報をご提供いただく場合があります。</div><div>①.ご登録いただいた会員様向けサービスの提供のため</div><div>②.ご注文、ご応募いただいた商品、賞品の発送のため</div><div>③.アンケート、イベント等にご協力いただいた方へのご報告のため</div><div>④.ダイレクトメールや電子メール等による、情報の提供のため</div><div>⑤.サイトのサービス向上・改善、新しいサービス開発のため</div><div>公式サイトにおいては、皆様ご自身の判断により、個人情報の提供の可否を選択できます。ただし、ご提供いただけない場合は公式サイト上のサービスをご利用いただけない場合があります。</div><div>&nbsp;</div><div>2）個人情報の第三者提供について</div><div>ご本人から承諾を得たとき、法令等に基づくとき、または正当な理由のあるとき、あるいは次のいずれかに該当する場合を除き、個人情報を第三者に提供しません。</div><div>&nbsp;</div><div>・個人を識別し得ない「統計データ」として開示する場合</div><div>・有料サービスのご利用や商品注文等に伴うクレジットカード等の決済手続きに際してユーザーの銀行口座やクレジットカード等の正当性を金融機関、カード会社などに確認する場合</div><div>・利用目的の達成に必要な範囲内で、第三者に個人情報の取り扱いを委託する場合</div><div>・法令などの定めにより開示を要求された場合</div><div>&nbsp;</div><div>3）クッキーの利用について</div><div>クッキー（Cookie）とは、ウェブページをご覧になった際にウェブサーバと皆様のブラウザの間で送受信される情報のことで、皆様がご利用のパソコンやモバイル端末でクッキーを受け取る設定にしている場合に、ブラウザの所定の場所に記録されます。ただし、記録された情報にはユーザー名やメールアドレスなどの個人情報は一切含まれません。公式サイトでは、クッキーに残った情報を利用して、皆様がより満足いただけるよう、表示を変えたりすることができます。 皆様は、ご自身でクッキーの受け取りを拒否する、あるいはクッキーを受け取った場合に警告を表示させるよう、ブラウザの設定を変えることが可能です。ただし、その際はサイトによってはサービスや機能が一部ご利用いただけない場合があります。</div><div>&nbsp;</div><div>4）第三者配信事業者の広告配信について</div><div>公式サイトの一部では、サイト内に表示する広告やネット上の様々なサイトに表示する講談社の広告について、第三者配信事業者に対し広告配信を委託しています。上記の広告配信を目的として、当社の委託先である広告配信業者も、皆様のクッキーを取得し、利用している場合があります。その場合に取得されるクッキーについては、当社のウェブサーバではなく、配信事業者のサーバに蓄積され、管理されています。</div><div>&nbsp;</div><div>5）アクセスログの取得</div><div>公式サイトでは、皆様の利便性およびサービス品質の向上を目的として、皆様のアクセス情報をアクセスログという形で取得し、一定期間保存しております。アクセスログに含まれる情報はアクセスした日時、回数、IPアドレス、使用ブラウザの種類、クッキー情報等であり、個人を識別する情報は取得しておりません。あくまでもサービス向上の一環として利用しています。</div><div>&nbsp;</div><div>6）外部リンクに関するご注意</div><div>公式サイトの中には、外部へのリンクが含まれている場合があります。このような外部のウェブサイトにおいての皆様の個人情報の取り扱いにつきましては、講談社では責任を負いかねますのでご注意ください。</div><div>&nbsp;</div><div>7）コミュニティに関するご注意</div><div>公式サイトの一部には、掲示板やコメント機能を提供しているサービスがあります。他のユーザーが閲覧できるサービス上に個人情報に関する書き込みなどをした場合、意図しない利用をされる可能性があります。ご利用に際しては十分ご注意ください。</div></div>
+    </div>
+
+    <label>
+      <input type="checkbox" name="bdash_form_data[f_1485]" id="bdash_form_data_f_1485" value="" class="agree_checkbox mr-1" />
+      <label for="bdash_form_data_f_1485">同意する</label>
+    </label>
+
+    <div class="page-item-message"></div>
+  </dd>
+</dl>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var agree_checkboxes  = document.querySelectorAll('.agree_checkbox');
+  var submit_btn      = document.querySelector('.bdash_form_commit_button');
+  var next_btn = document.querySelector('.bdash_form_next_button');
+
+  if (!agree_checkboxes) return;
+
+  if (submit_btn) {
+    submit_btn.disabled = true;
+  }
+  if (next_btn) {
+    next_btn.disabled = true;
+  }
+  // すべてのチェックボックスにチェックされたとき、submitボタン・次ページボタンを有効にする。
+  function updateStatusOfButtons() {
+    var disabled = false;
+    for(var i = 0; i < agree_checkboxes.length; i++) {
+      if (agree_checkboxes[i].checked) { continue; }
+      disabled = true;
+      break;
+    }
+
+    if (submit_btn) {
+      submit_btn.disabled = disabled;
+    }
+
+    if (next_btn) {
+      next_btn.disabled = disabled;
+    }
+  }
+  for(var i = 0; i < agree_checkboxes.length; i++) {
+    var agree_checkbox = agree_checkboxes[i];
+    agree_checkbox.removeEventListener('change', updateStatusOfButtons)
+    agree_checkbox.addEventListener('change', updateStatusOfButtons)
+  }
+});
+</script>
+<input type="hidden" name="bdash_form_data[f_1480]" id="bdash_form_data_f_1480" />
+
+  <div class="bdash_form_button_input">
+      <input type="submit" name="commit" value="送信" class="bdash_form_commit_button" data-disable-with="送信" />
+  </div>
+</form>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.querySelector('.bdash_form');
+  var submit_btn = document.querySelector('.bdash_form_commit_button');
+  var next_btn = document.querySelector('.bdash_form_next_button');
+
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener('submit', function() {
+    if (submit_btn) {
+      submit_btn.disabled = true;
+    }
+    if (next_btn) {
+      next_btn.disabled = true;
+    }
+  });
+});
+</script>
+
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!--
+      グループ（B）- フッター（B）
+    -->
+    <div class="block-group-b-b  mod-box  mod-box--theme-a-b--b">
+      <div class="block-group-b-b__container  mod-box__container">
+
+        <!--
+          バー（B）- フッター（A）
+        -->
+        <footer class="block-bar-b-a  mod-box  mod-box--theme-a-b--b" role="contentinfo">
+          <div class="block-bar-b-a__container  mod-box__container">
+            <p class="block-bar-b-a__copyright  mod-text  mod-text--align-center">COPYRIGHT &copy; 2018 KODANSHA LTD.ALL RIGHTS RESERVED.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- b-dash relation tag -->
+    <script type="text/javascript" src="//cdn.activity.bdash-cloud.com/tracking-script/bd-nps1hc/tracking.js?async=false" charset="UTF-8"></script>
+    <script language="JavaScript" type="text/javascript">
+      if(bdash2){
+      /* Cookieの値設定 */
+      var setCookie = function(n, v, e, d, p){
+        var nc = n + "=" + v + ";";
+        e && (nc += "expires=" + (new Date((new Date).getTime() + e)).toUTCString() + ";");
+        d && (nc += "domain=" + d + ";");
+        p && (nc += "path=" + p + ";");
+        document.cookie = nc;
+        return nc;
+      };
+      /* Cookieの取得 */
+      var getCookie = function(n){
+        var ck = document.cookie;
+        if(ck){
+          var st = ck.indexOf(n + "=");
+          if(st >= 0){
+            var ed = ck.indexOf(";", st);
+            return ck.substring(st + n.length + 1, (ed < 0 ? ck.length : ed));
+          }
+        }
+        return "";
+      };
+      var lc = document.location.href;
+      /* 確認ページ */
+      if(lc.indexOf('email_form_ca02/confirm') >= 0  ||
+         lc.indexOf('email_form_ca01/confirm') >= 0  ||
+         lc.indexOf('toiawase_form/confirm') >= 0  ||
+         lc.indexOf('email_form_fv01/confirm') >= 0  ||
+         lc.indexOf('email_form_mc/confirm') >= 0  ||
+         lc.indexOf('email_form/confirm') >= 0  ||
+         lc.indexOf('anime/confirm') >= 0  ||
+         lc.indexOf('forza/confirm') >= 0  ||
+         lc.indexOf('vivi/confirm') >= 0  ||
+         lc.indexOf('event/confirm') >= 0  ||
+         lc.indexOf('collab/confirm') >= 0  ||
+         lc.indexOf('video/confirm') >= 0  ||
+         lc.indexOf('booklet/confirm') >= 0  ||
+         lc.indexOf('promotion/confirm') >= 0  ||
+         lc.indexOf('sns/confirm') >= 0  ||
+         lc.indexOf('reader/confirm') >= 0  ||
+         lc.indexOf('character-pr/confirm') >= 0  ||
+         lc.indexOf('character-ad/confirm') >= 0  ||
+         lc.indexOf('kiyou/confirm') >= 0  ||
+         lc.indexOf('toiawase_form/confirm') >= 0  ||
+         lc.indexOf('email_form/confirm') >= 0  ||
+         lc.indexOf('basic01mangamarketing/confirm') >= 0  ||
+         lc.indexOf('service03sns/confirm') >= 0  ||
+         lc.indexOf('service02dokushasosiki/confirm') >= 0  ||
+         lc.indexOf('service01mangamarketing/confirm') >= 0  ||
+         lc.indexOf('case08kose/confirm') >= 0  ||
+         lc.indexOf('case07markstyler/confirm') >= 0  ||
+         lc.indexOf('case06aoyama/confirm') >= 0  ||
+         lc.indexOf('case05kirin/confirm') >= 0  ||
+         lc.indexOf('case03agatuma/confirm') >= 0  ||
+         lc.indexOf('case04sapporo/confirm') >= 0  ||
+         lc.indexOf('case02metaboric/confirm') >= 0  ||
+         lc.indexOf('case01honkonseihu/confirm') >= 0)
+      {
+        bdash2('set', {sendReady: function(e,t) {
+          try{
+            var inputTag = document.getElementsByClassName('bdash_form_commit_button')[0];
+            var eventArg = {
+              target: inputTag,
+              event: 'click',
+              handler: function(e, t){
+                var email = document.getElementsByClassName('page-item-info')[2].textContent.trim();
+                setCookie('_bdci',email,20000,document.domain, "/");  // customer_id
+              }
+            };
+            inputTag && t.addEvent(eventArg);
+          } catch(ex) {
+          } finally {
+            bdash2('send', {type:'pageview'});
+          }
+      }});
+      } else if
+        /* 完了ページ */
+        ((lc.indexOf('email_form_ca02/redirect/thanks') >= 0 ||
+         lc.indexOf('kakunin_form_ca01/redirect/thanks') >= 0 ||
+         lc.indexOf('toiawase_form/redirect/thanks') >= 0 ||
+         lc.indexOf('email_form_fv01/redirect/thanks') >= 0 ||
+         lc.indexOf('email_form_mc/redirect/thanks') >= 0 ||
+         lc.indexOf('email_form/redirect/thanks') >= 0 ||
+         lc.indexOf('anime/thanks') >= 0 ||
+         lc.indexOf('forza/thanks') >= 0 ||
+         lc.indexOf('vivi/thanks') >= 0 ||
+         lc.indexOf('event/thanks') >= 0 ||
+         lc.indexOf('collab/thanks') >= 0 ||
+         lc.indexOf('video/thanks') >= 0 ||
+         lc.indexOf('booklet/thanks') >= 0 ||
+         lc.indexOf('promotion/thanks') >= 0 ||
+         lc.indexOf('sns/thanks') >= 0 ||
+         lc.indexOf('reader/thanks') >= 0 ||
+         lc.indexOf('character-pr/thanks') >= 0 ||
+         lc.indexOf('character-ad/thanks') >= 0 ||
+         lc.indexOf('kiyou/thanks') >= 0 ||
+         lc.indexOf('toiawase_form/thanks') >= 0 ||
+         lc.indexOf('email_form/thanks') >= 0 ||
+         lc.indexOf('basic01mangamarketing/thanks') >= 0 ||
+         lc.indexOf('service03sns/thanks') >= 0 ||
+         lc.indexOf('service02dokushasosiki/thanks') >= 0 ||
+         lc.indexOf('service01mangamarketing/thanks') >= 0 ||
+         lc.indexOf('case08kose/thanks') >= 0 ||
+         lc.indexOf('case07markstyler/thanks') >= 0 ||
+         lc.indexOf('case06aoyama/thanks') >= 0 ||
+         lc.indexOf('case05kirin/thanks') >= 0 ||
+         lc.indexOf('case03agatuma/thanks') >= 0 ||
+         lc.indexOf('case04sapporo/thanks') >= 0 ||
+         lc.indexOf('case02metaboric/thanks') >= 0 ||
+         lc.indexOf('case01honkonseihu/thanks') >= 0 ) &&
+         document.cookie.indexOf("_bdci") >= 0 ) {
+          try{
+            bdash2('set', {exttblCustomerKey: "relational_key"});
+            bdash2('set', {exttblCustomerValue: getCookie('_bdci')});
+          } catch(ex){
+          } finally {
+            bdash2('send', {type: 'pageview'});
+            bdash2('set', {exttblCustomerKey: null});
+            bdash2('set', {exttblCustomerValue: null});
+          }
+      } else if (lc.indexOf('recommended-products/detail') >=0) {
+        // 推奨コンテンツ詳細ページ
+        bdash2('set', {sendReady: function(e,t) {
+          try{
+            // 「試し読み」ボタンを押したとき
+            var targetElement = document.querySelector('.section2 a');
+            var eventArg = {
+              target: targetElement,
+              event: 'click',
+              handler: function(e, t){
+                var elm = e.target.parentNode.parentNode.parentNode.parentNode.children;
+                for(var i = 0; i< elm.length-1;i++){
+                  if(elm[i].nodeName=="SECTION" && elm[i].className=="section1 clearfix"){
+                    var childElm = elm[i].children;
+                    for(var j = 0; j < childElm.length-1; j++){
+                      if(childElm[j].nodeName=="P" && childElm[j].className=="img"){
+                        bdash2('set', {customTrackingProperty1: childElm[j].childNodes[0].alt});
+                        bdash2('send', {type: 'pageview'});
+                        break;
+                      }
+                    }
+                  }
+                }
+              }
+            };
+            targetElement && t.addEvent(eventArg);
+          } catch(ex) {
+          } finally {
+          }
+        }});
+        // 下の試読
+        document.addEventListener('click', function(e) {
+          var t = ( e.target);
+          if(t.nodeName=="IMG" && e.type=="click" && t.alt=="試読"){
+            var elm = t.parentNode.parentNode.parentNode.parentNode.children;
+            for(var i = 0; i< elm.length-1;i++){
+              if(elm[i].nodeName=="P" && elm[i].className=="img"){
+                bdash2('set', {customTrackingProperty1: elm[i].childNodes[0].alt});
+                bdash2('send', {type: 'pageview'});
+                break;
+              }
+            }
+          }
+        }
+        ,false);
+      } else if
+        /*推奨コンテンツ*/
+        (lc.indexOf('recommended-products') >=0 ){
+          document.addEventListener ('click',function(e){
+            var t = ( e.target);
+            if(t.nodeName=="IMG" && e.type=="click" && t.alt=="試読"){
+              var elm = t.parentNode.parentNode.parentNode.children;
+              for(var i = 0; i< elm.length-1;i++){
+                if(elm[i].nodeName=="P" && elm[i].className=="img"){
+                  bdash2('set', {customTrackingProperty1: elm[i].childNodes[0].alt});
+                  bdash2('send', {type: 'pageview'});
+                  break;
+                }
+              }
+            }
+          }
+          ,false);
+      }else{
+            bdash2('send', {type:'pageview'});
+      }
+    }
+    </script>
+    <!-- end b-dash relation tag -->
+
+  </body>
+</html>

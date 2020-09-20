@@ -1,0 +1,942 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*google fontsにないものはfontfaceで読み込む*/
+@font-face{
+	font-family:'Noto Sans JP';/*なんて記述したら、下記のurl先から読むかのルール。*/
+	font-style:normal;
+	font-weight: 400;
+	src:
+		local("Noto Sans CJK JP"),/*localはPC側にNoto Sansのフォントがあれば優先的に使ってねという意味*/
+		local("Noto Sans JP")
+		/*以下はどんなブラウザでもNotoを使えるようにたくさん書いている*/
+	    url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format('woff2'),
+		url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format('woff'),
+		url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format('opentype');
+}
+html{
+	font-size: 62.5%;/*16px*62.5%=10px*/
+}
+body{
+	color: #333;
+	font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;/*google fontsより貼付け*/
+	font-size: 1.6rem;/*body全体を16pxとする（デフォルトと同じ）*/
+	font-feature-settings: "palt";/*文字詰め*/
+	letter-spacing: 0.05em;/*フォントサイズに対して5%の文字間を入れる*/
+	-webkit-font-smoothing:antialiased;
+/*	macで文字が太く表示されてしまうのを防ぐ*/
+	-moz-osx-font-smoothing:grayscale;
+/*	firefox対応*/
+}
+a{
+	color: #1E1715;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+strong{
+	color: #FD84BD;
+	font-size: 4rem;
+	font-weight: bolder;
+	display: inline-block;
+}
+
+
+/*---------------------------------------
+/ header
+/--------------------------------------*/
+.header{
+	width: 100%;
+	position:relative;
+	position:fixed;
+	background-color: #fff;
+	z-index: 100;
+}
+.logo__c-station{
+	padding: 16px 6px;
+	width: 75px;
+}
+.btn__set{
+	width:300px;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	top: 10px;
+	right:6px;
+}
+.btn-header__detail{
+	display: block;
+	width: 80px;
+	font-size: 1.2rem;
+	background-color: #FFFFFF;
+	color: #4C4C4C;
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px 0;/*横が０なのはテキストセンターで中央揃いになるから。（幅はWitdthで指定してあげる）*/
+	border-radius: 30px;
+	margin-right: 6px;
+}
+.btn-header__dl{
+	display: block;
+	width: 135px;
+	font-size: 1.2rem;
+	background-color: #FD84BD;
+	color: #fff;
+	padding: 10px 0;/*横が０なのはテキストセンターで中央揃いになるから。（幅はWitdthで指定してあげる）*/
+	border-radius: 30px;
+
+}
+.btn-header__dl::after{
+	position: relative;/*position relativeは他のhtmlに影響を与えずに位置を変えられる。*/
+	left: 5px;
+	content: "\f105";/*""で囲う必要あり*/
+	font-family: FontAwesome;
+}
+/*---------------------------------------
+/ hero-img
+/--------------------------------------*/
+.hero-img{
+	margin-top: 40px;
+
+}
+.hero-img__meta{
+	background-image:url("../images/KV/hero_backgroung.png");
+	background-size: 100%;
+}
+
+/*---------------------------------------
+* checklist
+*--------------------------------------*/
+.title-big{
+	font-size: 2.4rem;
+	font-weight: 800;
+	color: #1E1715;
+	display: inline-block;
+	margin: 10px 0;
+	background: linear-gradient(transparent 70%, #FC9ECD 70%);
+}
+
+.section-check-list{
+	padding: 5px;
+}
+
+.check-list{
+	margin: 10px;
+	padding: 15px 10px;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.check-mark{
+	position: relative;
+	padding-left: 15px;
+	font-weight: bold;
+	font-size: 2rem;
+	width: 260px;
+	margin: auto;
+	line-height: 1.5;
+	border-bottom: dashed;
+	border-bottom-width: thin;
+}
+
+.check-mark:before {
+	content: "";
+	position: absolute;
+	top: 0.3em;
+	left: 0;
+	-webkit-transform: rotate(50deg);
+	-ms-transform: rotate(50deg);
+	transform: rotate(50deg);
+	width: 5px;
+	height: 10px;
+	border-right: 3px solid #FC9ECD;
+	border-bottom: 3px solid #FC9ECD;
+}
+
+
+/*---------------------------------------
+* utility
+*--------------------------------------*/
+
+.text-center{
+	text-align: center;
+}
+.underline{
+	background: linear-gradient(transparent 70%, #FC9ECD 70%);
+	font-weight: bolder;
+}
+.bg-pink{
+	background: #FFEDED;
+}
+.bg-light-pink{
+	background: #FFF8F8;
+}
+
+/*---------------------------------------
+/ section
+/--------------------------------------*/
+.section-header{
+	padding:62px 10px 35px;
+}
+.section-body{
+	padding: 0 15px 35px;
+}
+.section-body:last-of-type{
+	padding-bottom: 30px;
+}
+.section-footer{
+	padding: 0 15px 50px;
+}
+/*---------------------------------------
+/ title
+/--------------------------------------*/
+.title{
+	font-size: 3.3rem;
+	line-height: 1.5;
+	margin-bottom: 45px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title__last{
+	font-size: 3rem;
+}
+
+.inline-block{
+	display: inline-block;
+	margin: 0 10px;
+}
+.underline{
+	background: linear-gradient(transparent 70%, #FC9ECD 70%);
+	font-weight: bolder;
+}
+.title-decolate__left{
+	width: 30px;
+}
+.title-decolate__right{
+	width: 30px;
+}
+.title-decolate__left.line{/*3本の装飾用*/
+	transform: translate3d(0,-160%,0) rotate(-45deg);
+}
+.title-decolate__right.line.line{/*3本の装飾用*/
+	transform: translate3d(0,-160%,0) rotate(45deg);
+}
+.title-decolate__left.question{/*questionの装飾用*/
+	transform: translate3d(0,-30%,0) rotate(-30deg);
+}
+.title-decolate__right.question{/*question装飾用*/
+	transform: translate3d(0,10%,0) rotate(30deg);
+	width: 25px;
+}
+.manga-title{
+	display: block;
+	margin: 10px 0 30px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	line-height: 1.5;
+}
+.manga-title__download{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+	background-color: #fff;
+	padding: 5px 0;
+	border-radius: 5px;
+}
+
+/*---------------------------------------
+/ text
+/--------------------------------------*/
+.section-text{
+	margin: auto;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+.section-text:last-of-type{
+	margin-bottom: 0;
+}
+.section-text-large{
+	font-size: 3rem;
+	margin-top: 30px;
+}
+.text-conclusion{
+	max-width: 1240px;
+	margin: auto;
+	font-size: 2.8rem;
+	font-weight: bold;
+	line-height: 1.5;
+	height: auto;
+	 /*線の種類（点線）2px 線色*/
+	border-bottom: dashed 2px #1E1715;
+	border-top: dashed 2px #1E1715;
+}
+.tieup-text{
+	margin-bottom: 20px;
+}
+.nowrap{
+	text-decoration: inherit;
+    white-space: nowrap;
+	font-weight: bolder;
+}
+
+/*---------------------------------------
+/ アピールポイント manga-power
+/--------------------------------------*/
+.apeal-point{
+	max-width: 250px;
+	margin: auto;
+	padding: 0 50px;
+}
+.img__apeal-point{
+	margin-bottom: 20px;
+}
+.logo__withonline{
+	width: 500px;
+	height: auto;
+	margin: 0px auto 35px;
+}
+/*---------------------------------------
+/ manga-power
+/--------------------------------------*/
+.manga-power__meta{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+.manga-power__text{
+	transform: translate3d(5%,35%,0);
+}
+.manga-power{
+	font-size: 3.5rem;
+	font-weight: 400;
+}
+.manga-power-detail{
+	display: block;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+.manga-power-image{
+	width: 170px;
+	height: auto;
+}
+/*---------------------------------------
+/ マンガがすごい
+/--------------------------------------*/
+.section-manga{
+	background: #fff;
+	font-size: 1.4rem;
+	line-height: 2.2;
+	padding: 140px 0 80px;
+	max-width: 500px;
+	margin: auto;
+	position: relative;
+}
+.section-manga-last{
+	background: #fff;
+	font-size: 1.4rem;
+	line-height: 2.2;
+	padding: 140px 0 80px;
+	max-width: 500px;
+	margin: auto;
+	border: groove;
+	border-width: thin;
+	position: relative;
+}
+.border-line{
+	display: block;
+	margin: 0 auto 30px ;
+	width: 50px;/*widthとheightと背景色で線を再現しえている*/
+	height: 1px;
+	background-color: #1E1715;
+}
+.manga-image{
+	max-width: 500px;
+	margin: auto
+}
+.manga-apealpoint{
+	position: relative;
+	width: 100px;
+}
+.manga-apealpoint__text{
+	position: absolute;
+	transform: translate3d(-50%,-50%,0);
+	top:50%;
+	left:45%;
+	font-size: 2.2rem;
+	color: #fff;
+	line-height: 1.4;
+	width: 120px;
+	display: inline-block;
+	font-weight: 500;
+}
+.manga-apealpoint__text.small{
+	font-size: 1.6rem;
+}
+.apeal-point__absolute{
+	position: absolute;
+	top:15px;
+	right: 15px;
+}
+/**/
+
+.x-line{
+	display: block;
+	width: 20px;
+	height: 10px;
+	margin: 10px auto 0;
+}
+.x-line span{
+	display: block;
+	width: 20px;/*widthとheightと背景色で線を再現しえている*/
+	height: 1px;
+	background-color: #1E1715;
+}
+.x-line span:first-of-type{/*メニューバーをクリックしたとき*/
+	transform: rotate(45deg);/*線を傾けてバッテンにする*/
+}
+.x-line span:last-of-type{
+	transform: rotate(-45deg);
+}
+
+/*---------------------------------------
+/ tieup
+/--------------------------------------*/
+.tieup{
+	background-image: url("../images/装飾/wave.gif");
+	background-size: 250%;
+}
+
+
+
+/*---------------------------------------
+/ conversion btn
+/--------------------------------------*/
+.conversion-btn__meta{
+	display: flex;
+	justify-content: center;
+	background-image: url("../images/装飾/3086835_m.jpg");
+	background-position: center;
+	background-size:140%;
+}
+.conversion-btn__manga{
+	transform: translate3d(-10%,0,0);
+	width: 250px;
+	height: auto;
+}
+.conversion-btn{
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 30px 0 30px;
+}
+.conversion-text{
+	line-height: 1.5;
+}
+.btn{
+	display: block;
+	width: 300px;
+	margin: auto;
+	font-size: 2.0rem;
+	background-color: #FD84BD;
+	color: #fff;
+	padding: 18px 0;/*横が０なのはテキストセンターで中央揃いになるから。（幅はWitdthで指定してあげる）*/
+	border-radius: 30px;
+}
+.btn::after{
+	position: relative;/*position relativeは他のhtmlに影響を与えずに位置を変えられる。*/
+	left: 5px;
+	content: "\f105";/*""で囲う必要あり*/
+	font-family: FontAwesome;
+}
+/*---------------------------------------
+/ download
+-----------------------------------------*/
+.download-image{
+	width: 500px;
+}
+.download-image__text{
+	font-size: 1.4rem;
+	margin-bottom: 30px;
+}
+.manga-title__download{
+	font-size: 1.8rem;
+	max-width: 500px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 16px 0;
+}
+/*---------------------------------------
+/ footer
+-----------------------------------------*/
+.footer{
+	padding: 10px;
+	background-color: #000000;
+}
+.copyrights{
+	color: #fff;
+	font-size: 1.1rem;
+}
+
+@media screen and (min-width: 1600px){/*1600以下になると発動*/
+	.Br1600{
+		display: none;
+	}
+}
+@media screen and (min-width: 1200px){
+	.tabpadBr{
+		display: none;
+	}
+}
+@media screen and (max-width: 1200px){
+	.no-display-m1200{
+		display: none;
+	}
+}
+@media screen and (max-width: 840px){
+	.tabpcBr{
+		display: none;
+	}
+}
+@media screen and (max-width: 600px){
+	.no-display-m600{
+		display: none;
+	}
+}
+
+
+
+@media screen and (min-width: 600px){/*600pxまで有効なcss*/
+	.check-mark{
+		font-size: 3.3rem;
+		width: 460px;
+		font-weight: 600;
+	}
+	.title-big{
+		font-size: 4.6rem;
+	}
+	.title-small{
+		font-size: 3.0rem;
+		font-weight: 400;
+	}
+	.spBr{
+		display: none;
+	}
+}
+
+/*---------------------------------------
+/ 
+/
+/ .   ↓　iphone5 SE用
+/
+/
+-----------------------------------------*/
+
+
+@media screen and (max-width: 330px){
+	.title{
+		font-size: 2.8rem;
+	}
+	.title__last{
+		font-size: 2.4rem;
+	}
+	.title-decolate__left{
+		width: 25px;
+	}
+	.title-decolate__right{
+		width: 25px;
+	}
+	.section-manga{
+		font-size: 1.3rem;
+	}
+	.manga-title{
+		font-size: 1.6rem;
+	}
+	.section-manga-last{
+	font-size: 1.2rem;
+	}
+	.text-conclusion{
+		font-size: 2.4rem;
+	}
+	.title-small{
+		font-size: 1.4rem;
+	}
+	.title-big{
+		font-size: 2rem;
+		margin: 6px 0;
+	}
+	.check-mark{
+		font-size: 1.5rem;
+		width: 205px;
+		padding-left: 20px;
+	}
+}
+
+
+
+/*---------------------------------------
+/ 
+/
+/ .   ↓　pc用
+/
+/
+-----------------------------------------*/
+
+@media screen and (min-width: 840px){/*840pxまで有効なcss*/
+	a{
+		transition: all 0.2s;
+	}
+	a:hover{
+		opacity: 0.5;
+	}
+	
+	
+	strong{
+		font-size: 7rem;
+	}
+	.tabspBr{
+		display: none;
+	}
+	
+/*---------------------------------------
+/ header
+-----------------------------------------*/
+	.header{
+		background-color: #fff;
+	}
+	.header-contents{
+		display: flex;
+		height: 120px;
+		max-width: 1420px;
+		margin: auto;
+	}
+	.logo__c-station{
+		width: 200px;
+		margin: auto;
+	}
+	.header-text{
+		display: block;
+		width: 800px;
+		margin: auto;
+		line-height: 1.4;
+		padding: 0 20px;
+		font-size: 1.8rem;
+	}
+	.btn__set{
+		position: relative;
+		margin: auto;
+		top: 0%;
+		right: 0%;
+		width:auto;
+	}
+	
+	.btn-header__detail{
+		font-size: 2.4rem;
+		width:170px;
+		margin-right: 20px;
+		padding: 25px 0;
+		border-radius: 30px;
+		
+	}	
+	.btn-header__dl{
+		font-size: 2.4rem;
+		width: 240px;
+		font-weight: 600;
+		margin-right: 10px;
+		padding: 25px 0;
+		border-radius: 30px;
+	}
+	
+/*---------------------------------------
+* checklist
+*--------------------------------------*/
+	.title-big{
+		font-size: 6rem;
+		margin-bottom: 12px;
+	}
+	.title-small{
+		font-size: 3.5rem;
+		font-weight: 600;
+		line-height: 1.2;
+
+	}
+	.section-check-list{
+		padding: 5px;
+	}
+	.check-list{
+		max-width: 1200px;
+		margin: 20px auto;
+		padding: 30px 20px;
+		background-color: #fff;
+		border-radius: 20px;
+	}
+	.check-mark{
+		width: 581px;
+		padding-left: 50px;
+		font-weight: 200;
+		font-size: 4.8rem;
+	}
+	.check-mark:before {
+		top: 0.2em;
+		left: 0px;
+		width: 15px;
+		height: 30px;
+		border-right: 9px solid #FC9ECD;
+		border-bottom: 9px solid #FC9ECD;
+	}
+/*---------------------------------------
+* heroimage
+*--------------------------------------*/
+	
+	.hero-img{
+		margin-top: 100px;
+		width: 110%;
+	}
+/*---------------------------------------
+* title
+*--------------------------------------*/
+	.title{
+		font-size: 7rem;
+	}
+	.underline{
+		margin-bottom: 90px;
+	}
+	.manga-title{
+		font-size: 2.4rem;;
+	}
+	.title-decolate__left{
+		width: 60px;
+		margin-right: 10px;
+	}
+	.title-decolate__right{
+		width: 60px;
+		margin-left: 10px;
+	}
+	.title-decolate__right.question{
+	width: 50px;
+	}
+	.title__last{
+	font-size: 7rem;
+	}
+/*---------------------------------------
+* section
+*--------------------------------------*/
+	.section-header{
+		padding-bottom: 70px;
+	}
+	.section-body{
+		padding-bottom: 70px;
+	}
+	.section-footer{
+		padding-bottom: 100px;
+	}
+/*---------------------------------------
+* text
+*--------------------------------------*/
+	.section-text{
+		font-size: 2.4rem;
+		line-height: 2;
+	}
+	.section-text-large{
+		margin-top: 70px;
+	}
+	.text-conclusion{
+		font-size: 4.5rem;
+	}
+/*---------------------------------------
+/ アピールポイント manga-power
+/--------------------------------------*/
+	.logo__withonline{
+		margin-bottom: 55px;
+}	
+	.apeal-point__float{
+		display: flex;
+		justify-content:center;
+	}
+	.img__apeal-point{
+		max-width: 280px;
+		padding: 0 25px;
+	}
+/*---------------------------------------
+/ manga
+/--------------------------------------*/
+	.section-manga__float{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.section-manga__float_reverse {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row-reverse;/*flexの位置を左右入れ替え*/
+	}
+	.manga-image{
+		max-width: 600px;
+		margin: 0 10px;
+	}
+	.section-manga{
+		width: 450px;
+		margin:0px 10px;
+		padding: 170px 0 140px;
+	}
+	.section-manga-text{
+		font-size: 1.8rem;
+		display: block;
+
+	}
+	.section-manga-last{
+		width: 650px;
+		height: auto;
+		font-size: 1.8rem;
+		margin:0px 10px;
+		padding: 150px 0;
+	}
+	.manga-apealpoint{
+		width: 130px;
+	}
+	.manga-apealpoint__text{
+		position: absolute;
+		transform: translate3d(-50%,-50%,0);
+		top:50%;
+		left:45%;
+		font-size: 2.8rem;
+		color: #fff;
+		line-height: 1.4;
+		width: 120px;
+		display: inline-block;
+		font-weight: 600;
+	}
+	.manga-apealpoint__text.small{
+		font-size: 2.0rem;
+	}
+
+/*---------------------------------------
+/ マンガの力
+/--------------------------------------*/
+	.manga-power__float{
+		display: flex;
+		justify-content: center;
+	}
+	.manga-power__meta{
+		display: block;
+	}
+	.manga-power-image{
+		width: 260px;
+		margin: 0 40px 20px;
+	}
+	.manga-power__text{
+		display: block;
+		transform: translate3d(0%,0%,0);
+		width: 300px;
+		margin: auto;
+	}
+	.manga-power{
+		font-size: 7rem;
+	}
+	.manga-power-detail{
+		font-size: 3rem;
+	}
+
+
+/*---------------------------------------
+/ tieup
+/--------------------------------------*/
+	.tieup{
+		background-size: 100%;
+}
+
+
+/*---------------------------------------
+/ download
+-----------------------------------------*/
+	.download-image{
+		height: 300px;
+		width: auto;
+		margin: 0 20px
+	}
+	.download-image__text{
+		font-size: 1.6rem;
+		margin-bottom: 30px;
+	}
+	.download-image__float{
+		display: flex;
+		justify-content: center;
+		
+	}
+	.manga-title__download{
+		font-size: 2.4rem;
+		max-width: 893px;
+		font-weight: bold;
+		margin-bottom: 20px;
+		padding: 16px 0;
+	}
+	
+/*---------------------------------------
+/ btn
+/--------------------------------------*/
+	.conversion-btn__manga{
+		transform: translate3d(-5%,0,0);
+		width: 300px;
+		height: auto;
+	}
+	.conversion-btn{
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	.conversion-text{
+		transform: translate3d(10%,0,0);
+		font-size: 2.5rem;
+		font-weight: 300;
+	}
+	.btn{
+		transform: translate3d(10%,0,0);
+		width: 600px;
+		font-size: 4.0rem;
+		padding: 18px 0;/*横が０なのはテキストセンターで中央揃いになるから。（幅はWitdthで指定してあげる）*/
+		border-radius: 50px;
+		font-weight:800;
+	}
+	.btn::after{
+		position: relative;/*position relativeは他のhtmlに影響を与えずに位置を変えられる。*/
+		left: 5px;
+		content: "\f105";/*""で囲う必要あり*/
+		font-family: FontAwesome;
+	}
+	
+	
+/*---------------------------------------
+/ footer
+-----------------------------------------*/
+	.footer{
+		padding: 16px;
+		background-color: #000000;
+	}
+	.copyrights{
+		color: #fff;
+		font-size: 1.4rem;
+	}	
+}
+
+.fadeInUpTrigger{
+	opacity: 0;
+}
+
+.heartBeaTrigger{
+	opacity: 0;
+}
+.change-time{
+	animation-delay: 0.5s;
+}
+/*pulse*/
+.count3{
+	animation-iteration-count: 3;
+}
